@@ -1,7 +1,7 @@
 # LuucassR.portfolio.github.io
-Portafolio de Proyectos de Lucas Rossi
-# ⭐ Proyecto de Portafolio — *Título atractivo aquí*  
-¡Tu breve tagline o lema! 🚀
+
+# Lucas Rossi | Desarrollador Python & Web (Junior/Trainee)  
+**Construyendo soluciones completas: de la lógica backend a la interfaz básica.** 💡
 
 ![Tecnología](https://img.shields.io/badge/Stack-Python%20%7C%20HTML%20%7C%20CSS-blue?style=flat&logo=python)
 ![Estado](https://img.shields.io/badge/Estado-WIP-yellow?style=flat)
@@ -13,9 +13,9 @@ Portafolio de Proyectos de Lucas Rossi
 2. [Demostración / Uso](#demostración--uso)  
 3. [Tecnologías](#tecnologías-utilizadas)  
 4. [Instalación y ejecución](#instalación-y-ejecución)  
-5. [Estructura de carpetas](#estructura-de-carpetas)  
-6. [Cómo contribuir](#cómo-contribuir)  
-8. [Contacto / Autor](#contacto--autor)
+5. [Estructura de carpetas](#estructura-de-carpetas)    
+6. [Contacto / Autor](#contacto--autor)
+7. [Contacto y Redes Sociales](#contacto-y-redes-sociales)
 
 ---
 
@@ -72,3 +72,28 @@ pip install -r requirements.txt
 export FLASK_APP=app.py        # o set FLASK_APP=app.py en Windows
 flask run
 # abrir en el navegador: http://127.0.0.1:5000
+
+---
+
+## 📂 Estructura del Repositorio
+Para facilitar la comprensión del proyecto, aquí se detalla la organización de los archivos principales.
+
+LuucassR.portfolio.github.io/
+├── README.md             
+├── requirements.txt      
+├── static/               
+└── templates/            
+
+---
+
+## 🤝 Contacto y Redes Sociales
+¡Conéctate conmigo! Estoy disponible para discutir oportunidades de colaboración o empleo.
+
+| Plataforma | Enlace | Badge |
+| :--- | :--- | :--- |
+| **Email** | `lucassrossi12@gmail.com` | ![Email](https://img.shields.io/badge/Email-Contacto-D14836?style=flat&logo=gmail) |
+| **LinkedIn** | [Tu Perfil de LinkedIn](https://www.linkedin.com/in/lucas-rossi-052926389/) | ![LinkedIn](https://img.shields.io/badge/LinkedIn-Ver%20Perfil-0A66C2?style=flat&logo=linkedin) |
+| **GitHub** | [Mi Perfil de GitHub](https://github.com/LuucassR) | ![GitHub](https://img.shields.io/badge/GitHub-Seguir-181717?style=flat&logo=github) |
+
+---
+
