@@ -1,7 +1,6 @@
 # LuucassR.portfolio.github.io
 
 # Lucas Rossi | Desarrollador Python & Web (Junior/Trainee)  
-**Construyendo soluciones completas: de la lógica backend a la interfaz básica.** 💡
 
 ![Tecnología](https://img.shields.io/badge/Stack-Python%20%7C%20HTML%20%7C%20CSS-blue?style=flat&logo=python)
 ![Estado](https://img.shields.io/badge/Estado-WIP-yellow?style=flat)
@@ -10,26 +9,13 @@
 
 ## Índice
 1. [Descripción](#descripción)  
-2. [Demostración / Uso](#demostración--uso)  
-3. [Tecnologías](#tecnologías-utilizadas)  
-4. [Instalación y ejecución](#instalación-y-ejecución)     
-5. [Contacto y Redes Sociales](#🤝contacto-y-redes-sociales)
+2. [Tecnologías](#tecnologías-utilizadas)     
+3. [Contacto y Redes Sociales](#🤝contacto-y-redes-sociales)
 
 ---
 
 ## Descripción
-**Breve resumen (1–3 párrafos):**  
 Este proyecto es un ejemplo de portafolio que demuestra habilidades en *Python, SQL y desarrollo web (HTML/CSS/JavaScript)*. Incluye una aplicación backend ligera con persistencia en SQLite, pequeños scripts de automatización, y componentes frontend sencillos para mostrar resultados. Está pensado para demostrar competencias técnicas y buenas prácticas de organización de código para roles junior en desarrollo web/backend.
-
-**Problema que resuelve / propósito:**  
-Permite a reclutadores y colaboradores evaluar tu capacidad para armar proyectos completos, desde lógica y almacenamiento hasta interfaz básica, todo documentado y reproducible localmente.
-
----
-
-## Demostración / Uso
-1. Clona el repositorio.  
-2. Instala dependencias.  
-3. Ejecuta la app.
 
 ---
 
@@ -43,38 +29,7 @@ Permite a reclutadores y colaboradores evaluar tu capacidad para armar proyectos
 
 ---
 
-## Instalación y ejecución
-
-**Requisitos previos**
-- Python 3.8+  
-- Git
-
-**Pasos (ejemplo con virtualenv + Flask):**
-```bash
-# clonar repo
-git clone https://github.com/LuucassR/LuucassR.portfolio.github.io.git
-cd LuucassR.portfolio.github.io
-
-# crear entorno virtual (Linux/Mac)
-python3 -m venv venv
-source venv/bin/activate
-
-# o en Windows (PowerShell)
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-
-# instalar dependencias
-pip install -r requirements.txt
-
-# ejecutar la aplicación
-export FLASK_APP=app.py        # o set FLASK_APP=app.py en Windows
-flask run
-# abrir en el navegador: http://127.0.0.1:5000
-```
----
-
 ## 🤝 Contacto y Redes Sociales
-¡Conéctate conmigo! Estoy disponible para discutir oportunidades de colaboración o empleo.
 
 | Plataforma | Enlace | Badge |
 | :--- | :--- | :--- |
