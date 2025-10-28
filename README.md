@@ -12,10 +12,8 @@
 1. [Descripción](#descripción)  
 2. [Demostración / Uso](#demostración--uso)  
 3. [Tecnologías](#tecnologías-utilizadas)  
-4. [Instalación y ejecución](#instalación-y-ejecución)  
-5. [Estructura de carpetas](#estructura-de-carpetas)    
-6. [Contacto / Autor](#contacto--autor)
-7. [Contacto y Redes Sociales](#contacto-y-redes-sociales)
+4. [Instalación y ejecución](#instalación-y-ejecución)     
+5. [Contacto y Redes Sociales](#contacto-y-redes-sociales)
 
 ---
 
@@ -75,25 +73,14 @@ flask run
 ```
 ---
 
-## 📂 Estructura del Repositorio
-Para facilitar la comprensión del proyecto, aquí se detalla la organización de los archivos principales.
-
-LuucassR.portfolio.github.io/
-├── README.md             
-├── requirements.txt      
-├── static/               
-└── templates/            
-
----
-
 ## 🤝 Contacto y Redes Sociales
 ¡Conéctate conmigo! Estoy disponible para discutir oportunidades de colaboración o empleo.
 
 | Plataforma | Enlace | Badge |
 | :--- | :--- | :--- |
 | **Email** | `lucassrossi12@gmail.com` | ![Email](https://img.shields.io/badge/Email-Contacto-D14836?style=flat&logo=gmail) |
-| **LinkedIn** | [Tu Perfil de LinkedIn](https://www.linkedin.com/in/lucas-rossi-052926389/) | ![LinkedIn](https://img.shields.io/badge/LinkedIn-Ver%20Perfil-0A66C2?style=flat&logo=linkedin) |
-| **GitHub** | [Mi Perfil de GitHub](https://github.com/LuucassR) | ![GitHub](https://img.shields.io/badge/GitHub-Seguir-181717?style=flat&logo=github) |
+| **LinkedIn** | [LinkedIn](https://www.linkedin.com/in/lucas-rossi-052926389/) | ![LinkedIn](https://img.shields.io/badge/LinkedIn-Ver%20Perfil-0A66C2?style=flat&logo=linkedin) |
+| **GitHub** | [GitHub](https://github.com/LuucassR) | ![GitHub](https://img.shields.io/badge/GitHub-Seguir-181717?style=flat&logo=github) |
 
 ---
 
