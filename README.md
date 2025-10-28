@@ -10,7 +10,7 @@
 ## Índice
 1. [Descripción](#descripción)  
 2. [Tecnologías](#tecnologías-utilizadas)     
-3. [Contacto y Redes Sociales](#🤝contacto-y-redes-sociales)
+3. [Contacto y Redes Sociales](#🤝-Contacto-y-Redes-Sociales)
 
 ---
 
