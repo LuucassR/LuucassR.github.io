@@ -1,0 +1,565 @@
+/* --- 1. Diseño General y UX --- */
+
+/* 1.1: Paleta de colores elegante */
+:root {
+  /* Paleta Oscura (Principal) */
+  --color-bg: #0b0f19; /* Fondo principal (Azul muy oscuro) */
+  --color-bg-secondary: #111827; /* Fondo de secciones (Azul más claro) */
+  --color-card: #293749; /* Fondo de tarjetas (Gris azulado) */
+  --color-text: #e5e7eb; /* Texto principal (Gris claro) */
+  --color-text-secondary: #9ca3af; /* Texto secundario (Gris) */
+  --color-primary: #3b82f6; /* Acento principal (Azul brillante) */
+  --color-accent: #10b981; /* Acento secundario (Verde) */
+
+  /* 1.4: Tipografía */
+  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+
+  /* 7.1: Transiciones suaves */
+  --transition-fast: 0.3s ease;
+  --transition-medium: 0.5s ease-out;
+}
+
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Habilita el scroll suave para los enlaces ancla (a[href="#"]) */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+/* Asumiendo que tu main es el elemento de scroll */
+#main-content::-webkit-scrollbar {
+  display: none;
+}
+
+#main-content {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 1.2: Contenedor principal para scroll-snap */
+#main-content {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  padding: 6rem 2rem 4rem; /* Padding superior para dejar espacio al menú */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-card);
+}
+
+/* Sección de inicio usa el color de fondo base */
+#inicio {
+  background-color: var(--color-bg);
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* 1.4: Jerarquía de tipografía */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); /* Fuente responsiva */
+  font-weight: 900;
+}
+h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 650px; /* Mejora la legibilidad */
+}
+
+/* Botón de Call to Action (CTA) */
+.cta-button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: background-color var(--transition-fast),
+    transform var(--transition-fast);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.cta-button:hover {
+  background-color: #2563eb; /* Un poco más oscuro al pasar el cursor */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* 1.3: Menú fijo minimalista */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 1000;
+  /* Efecto "glassmorphism" moderno */
+  background-color: rgba(11, 15, 25, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-card);
+  transition: background-color var(--transition-fast);
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+.nav-link:hover {
+  color: var(--color-text);
+}
+/* Línea indicadora para el link activo */
+.nav-link.active {
+  color: var(--color-primary);
+}
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* --- 2. Sección de Inicio --- */
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* 2.1: El hover se maneja en JS, pero nos aseguramos que el canvas no bloquee el contenido */
+  pointer-events: none;
+}
+.hero-content {
+  position: relative; /* Para que esté sobre el canvas */
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#inicio p {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+/* 2.3: Animación de entrada */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-down {
+  opacity: 0; /* Inicia invisible */
+  animation: slide-down 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* --- 3. Sección Sobre mí --- */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+/* 3.1: Foto de perfil */
+.profile-pic {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-card);
+  /* 3.1: Sombra suave */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 4px var(--color-primary);
+  margin-bottom: 1rem;
+}
+/* 3.3: Línea de separación */
+.separator {
+  width: 100px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 2px;
+  margin: 0.5rem 0;
+}
+/* 3.2: Etiquetas de tecnologías */
+.tech-stack {
+  margin-top: 1.5rem;
+}
+.tech-stack h3 {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem; /* Increased spacing */
+  margin-top: 1rem;
+  justify-content: center; /* Center the badges */
+}
+.tech-badge {
+  background-color: var(--color-card);
+  color: var(--color-text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #374151;
+
+  /* Efecto de Luz (Halo): Usando box-shadow suave */
+  border: 1px solid transparent; /* El borde real es transparente */
+  box-shadow: 0 0 0 1px var(--color-bg-secondary),
+    /* Borde fino que simula el gris */ 0 0 8px rgba(255, 255, 255, 0.1); /* Halo de luz blanca muy sutil */
+
+  /* Transiciones para la animación lenta y suave */
+  transition: background-color 0.4s ease, border-color 0.4s ease,
+    transform 0.3s ease, box-shadow 0.4s ease, color 0.4s ease;
+  cursor: pointer;
+}
+
+/* Animación de hover: Agrandar, Fondo Iluminado/Primario Suave, Borde Iluminado */
+.tech-badge:hover {
+  transform: scale(1.08); /* Agrandar un 8% */
+
+  /* El fondo cambia lentamente al color principal de acento */
+  background-color: var(--color-primary);
+
+  /* El texto cambia para tener alto contraste */
+  color: var(--color-bg);
+
+  /* El halo de luz se intensifica y cambia al color primario */
+  box-shadow: 0 0 0 1px var(--color-primary),
+    /* Borde fino del color primario */ 0 0 15px
+      rgba(var(--color-primary-rgb), 0.6); /* Halo de luz más fuerte */
+}
+
+/* --- 4. Sección Servicios / Habilidades --- */
+/* 4.3: Grilla responsiva */
+.services-grid {
+  display: grid;
+  /* Crea columnas de mínimo 280px y máximo 1fr (ocupa el espacio disponible) */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+}
+.service-card {
+  background-color: var(--color-card);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  text-align: center;
+  /* 4.2: Transición para efecto "levantamiento" */
+  transition: transform var(--transition-fast),
+    background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+/* 4.1: Iconos representativos */
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+.service-card h3 {
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+.service-card p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+/* 4.2: Animación hover "levantamiento" */
+.service-card:hover {
+  transform: translateY(-10px);
+  background-color: #2a3a50; /* Color de fondo más claro */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 5. Sección Proyectos --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+}
+.project-card {
+  background-color: var(--color-card);
+  border-radius: 12px;
+  overflow: hidden; /* Clave para el overlay y la imagen */
+  position: relative;
+  border: 1px solid #374151;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.project-info {
+  padding: 1.5rem;
+}
+.project-info h4 {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+.project-info p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+/* 5.3: Badges modernos */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.project-tags span {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--color-accent);
+}
+/* 5.1: Enlaces activos */
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+.project-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.project-links a:hover {
+  text-decoration: underline;
+}
+/* 5.2: Overlay sutil */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px; /* Misma altura que la imagen */
+  background-color: rgba(11, 15, 25, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity var(--transition-fast);
+}
+.project-card:hover .project-overlay {
+  opacity: 1; /* Mostrar al pasar el cursor */
+}
+.project-button {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transform: scale(0.9);
+  transition: transform var(--transition-fast);
+}
+.project-card:hover .project-button {
+  transform: scale(1);
+}
+
+/* --- 6. Sección Contacto --- */
+#contacto p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+/* 6.1: Formulario funcional */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+.form-group input,
+.form-group textarea {
+  background-color: var(--color-card);
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+.contact-form .cta-button {
+  align-self: center;
+}
+/* 6.2: Iconos de redes sociales */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.social-links a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.social-links a:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+/* --- 7. Animaciones y Scroll Reveal --- */
+/* 1.2 / 7.2: Efecto de "scroll reveal" (fade-in + slide) */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-medium),
+    transform var(--transition-medium);
+}
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 8. Responsividad --- */
+/* 6.3: Disposición móvil centrada (ya cubierto por max-width y flex-direction) */
+@media (max-width: 768px) {
+  .main-nav {
+    gap: 0.5rem;
+  }
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.25rem;
+  }
+  section {
+    padding: 5rem 1rem 3rem; /* Menos padding en móviles */
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .services-grid,
+  .projects-grid {
+    grid-template-columns: 1fr; /* Apila las tarjetas en móviles */
+  }
+}
+
+
+/* --- Nuevo: Footer Styling --- */
+.main-footer {
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: var(--color-bg);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-card);
+}
+.footer-links {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.footer-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+.footer-links a:hover {
+    color: var(--color-primary);
+}

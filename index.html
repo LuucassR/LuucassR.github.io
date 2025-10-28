@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Rossi | Full-Stack Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="#home" class="nav-link active" aria-label="Go to Home">Home</a>
+      <a href="#about" class="nav-link" aria-label="Go to About Me">About</a>
+      <a href="#services" class="nav-link" aria-label="Go to Services">Services</a>
+      <a href="#projects" class="nav-link" aria-label="Go to Projects">Projects</a>
+      <a href="#contact" class="nav-link" aria-label="Go to Contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section id="home" role="region" aria-label="Home">
+      <canvas id="particles-canvas"></canvas>
+      <div class="hero-content">
+        <h1 class="animate-slide-down">Lucas Rossi</h1>
+        <p class="animate-slide-down" style="animation-delay: 0.2s;">Junior Full-Stack Developer</p>
+        <a href="#projects" class="cta-button animate-slide-down" style="animation-delay: 0.4s;">View My Work</a>
+      </div>
+    </section>
+
+    <section id="about" role="region" aria-label="About Me">
+      <div class="about-content">
+        <img src="portfolio_photo.jpg" alt="Profile picture of Lucas Rossi" class="profile-pic">
+        
+        <h2>About Me</h2>
+        <hr class="separator">
+        <p>
+          I am Lucas Rossi, a highly dedicated Junior Frontend and Backend Programmer with a robust technical foundation in Python, SQL, JavaScript, C and C++. My commitment to excellence is proven by the CS50 Python Certification from HarvardX, and I am actively expanding my expertise towards Full Stack development by pursuing CS50x, CS50 SQL, and The Odin Project.
+        </p>
+        
+        <div class="tech-stack">
+          <h3>Technologies:</h3>
+          <div class="tech-icons">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">SQL</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">C</span>
+            <span class="tech-badge">C++</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" role="region" aria-label="Services">
+      <h2>My Services</h2>
+      <div class="services-grid">
+        
+        <div class="service-card" tabindex="0" role="button">
+          <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
+          <h3>Backend Development</h3>
+          <p>Designing and developing REST APIs with Python (Flask, FastAPI) and SQL databases.</p>
+        </div>
+        
+        <div class="service-card" tabindex="0" role="button">
+          <div class="service-icon" aria-hidden="true">🎨</div>
+          <h3>Frontend Development</h3>
+          <p>Building responsive and modern interfaces using HTML, CSS, and JavaScript.</p>
+        </div>
+        
+        <div class="service-card" tabindex="0" role="button">
+          <div class="service-icon" aria-hidden="true">⚡️</div>
+          <h3>Automation</h3>
+          <p>Scripts for repetitive tasks, data handling, and workflow optimization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" role="region" aria-label="Projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card" tabindex="0">
+          <img src="https://via.placeholder.com/400x250/3B82F6/E5E7EB?text=Python+RPG+Project" alt="Python RPG Project Preview" class="project-image">
+          <div class="project-overlay">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="project-button">View Project</a>
+          </div>
+          <div class="project-info">
+            <h4>Python RPG Project</h4>
+            <p>Console-based role-playing game with turn-based combat.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View code on GitHub">GitHub</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View live demo">Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" tabindex="0">
+          <img src="https://via.placeholder.com/400x250/10B981/1F2937?text=Web+Portfolio" alt="Web Portfolio Preview" class="project-image">
+          <div class="project-overlay">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="project-button">View Project</a>
+          </div>
+          <div class="project-info">
+            <h4>Personal Web Portfolio</h4>
+            <p>Responsive design with HTML, CSS, JS, and Flask.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View code on GitHub">GitHub</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" tabindex="0">
+          <img src="https://via.placeholder.com/400x250/EC4899/E5E7EB?text=Automation" alt="Task Automation Preview" class="project-image">
+          <div class="project-overlay">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="project-button">View Project</a>
+          </div>
+          <div class="project-info">
+            <h4>Task Automation</h4>
+            <p>Python scripts to generate reports and handle CSV data.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>SQLite</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View code on GitHub">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" role="region" aria-label="Contact">
+        <h2>Contact</h2>
+        <p>Interested Send me a message.</p>
+
+        <form 
+            action="https://getform.io/f/awnyzyyb" 
+            method="POST" 
+            class="contact-form">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+
+        <div class="social-links">
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn profile">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="My GitHub profile">GitHub</a>
+        </div>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 Lucas Rossi. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
