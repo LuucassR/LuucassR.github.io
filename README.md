@@ -11,7 +11,7 @@ Portafolio de Proyectos de Lucas Rossi
 ## Índice
 1. [Descripción](#descripción)  
 2. [Demostración / Uso](#demostración--uso)  
-3. [Tecnologías](#tecnologías)  
+3. [Tecnologías](#tecnologías-utilizadas)  
 4. [Instalación y ejecución](#instalación-y-ejecución)  
 5. [Estructura de carpetas](#estructura-de-carpetas)  
 6. [Cómo contribuir](#cómo-contribuir)  
@@ -29,10 +29,9 @@ Permite a reclutadores y colaboradores evaluar tu capacidad para armar proyectos
 ---
 
 ## Demostración / Uso
-**Demo rápida:**  
 1. Clona el repositorio.  
 2. Instala dependencias.  
-3. Ejecuta la app y abre `http://localhost:5000` (o el puerto que uses).
+3. Ejecuta la app.
 
 ---
 
@@ -43,8 +42,6 @@ Permite a reclutadores y colaboradores evaluar tu capacidad para armar proyectos
 - ![CSS3](https://img.shields.io/badge/CSS3-%3E3-blue?style=flat&logo=css3) `CSS`  
 - ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=flat&logo=javascript) `JavaScript`    
 - ![GitHub](https://img.shields.io/badge/GitHub-repo-black?style=flat&logo=github) `Git / GitHub`  
-
-> Ajusta los badges a las versiones concretas que uses.
 
 ---
 
