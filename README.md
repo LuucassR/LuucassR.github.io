@@ -29,7 +29,7 @@ Este proyecto es un ejemplo de portafolio que demuestra habilidades en *Python, 
 
 ---
 
-## 🤝 Contacto y Redes Sociales
+## Contacto y Redes Sociales
 
 | Plataforma | Enlace | Badge |
 | :--- | :--- | :--- |
