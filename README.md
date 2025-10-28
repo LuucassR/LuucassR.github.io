@@ -72,7 +72,7 @@ pip install -r requirements.txt
 export FLASK_APP=app.py        # o set FLASK_APP=app.py en Windows
 flask run
 # abrir en el navegador: http://127.0.0.1:5000
-
+```
 ---
 
 ## 📂 Estructura del Repositorio
