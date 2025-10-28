@@ -13,7 +13,7 @@
 2. [Demostración / Uso](#demostración--uso)  
 3. [Tecnologías](#tecnologías-utilizadas)  
 4. [Instalación y ejecución](#instalación-y-ejecución)     
-5. [Contacto y Redes Sociales](#contacto-y-redes-sociales)
+5. [Contacto y Redes Sociales](#🤝contacto-y-redes-sociales)
 
 ---
 
