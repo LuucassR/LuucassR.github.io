@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lucas Rossi | Full-Stack Developer</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,30 +12,26 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <header class="main-header">
       <nav class="main-nav">
-        <a href="#home" class="nav-link active" aria-label="Go to Home">Home</a>
-        <a href="#about" class="nav-link" aria-label="Go to About Me">About</a>
-        <a href="#services" class="nav-link" aria-label="Go to Services"
-          >Services</a
-        >
-        <a href="#projects" class="nav-link" aria-label="Go to Projects"
-          >Projects</a
-        >
-        <a href="#contact" class="nav-link" aria-label="Go to Contact"
-          >Contact</a
-        >
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
     </header>
 
     <main id="main-content">
-      <section id="home" role="region" aria-label="Home">
+      <!-- HOME -->
+      <section id="home">
         <canvas id="particles-canvas"></canvas>
         <div class="hero-content">
           <h1 class="animate-slide-down">Lucas Rossi</h1>
           <p class="animate-slide-down" style="animation-delay: 0.2s">
-            Junior Full-Stack Developer
+            <span class="typed-text"></span>
           </p>
           <a
             href="#projects"
@@ -46,25 +42,22 @@
         </div>
       </section>
 
-      <section id="about" role="region" aria-label="About Me">
+      <!-- ABOUT -->
+      <section id="about">
         <div class="about-content">
           <img
             src="portfolio_photo.jpg"
             alt="Profile picture of Lucas Rossi"
             class="profile-pic"
           />
-
           <h2>About Me</h2>
           <hr class="separator" />
           <p>
-            I am Lucas Rossi, a highly dedicated Junior Frontend and Backend
-            Programmer with a robust technical foundation in Python, SQL,
-            JavaScript, C and C++. My commitment to excellence is proven by the
-            CS50 Python Certification from HarvardX, and I am actively expanding
-            my expertise towards Full Stack development by pursuing CS50x, CS50
-            SQL, and The Odin Project.
+            I’m Lucas Rossi, a dedicated Junior Full-Stack Developer with
+            experience in Python, SQL, JavaScript, C, and C++. Certified by
+            HarvardX (CS50 Python) and currently expanding my expertise with
+            CS50x, SQL, and The Odin Project.
           </p>
-
           <div class="tech-stack">
             <h3>Technologies:</h3>
             <div class="tech-icons">
@@ -80,13 +73,12 @@
         </div>
       </section>
 
-      <section id="services" role="region" aria-label="Services">
+      <!-- SERVICES -->
+      <section id="services">
         <h2>What I Do</h2>
         <p class="section-intro">
-          I design and develop clean, efficient, and scalable web solutions —
-          from responsive frontends to robust backend systems. I’m passionate
-          about problem-solving, continuous learning, and building functional
-          applications that make a real impact.
+          I design and develop efficient, scalable web solutions — from
+          responsive frontends to robust backend systems.
         </p>
 
         <div class="services-grid">
@@ -94,14 +86,13 @@
             <div class="service-icon">⚙️</div>
             <h3>Backend Development</h3>
             <p>
-              Developing reliable and secure backend systems using
+              Building reliable backend systems using
               <strong>Python</strong>, <strong>Flask</strong>, and
-              <strong>FastAPI</strong>. I focus on clean architecture, database
-              design, and performance optimization.
+              <strong>FastAPI</strong>.
             </p>
             <ul class="service-list">
               <li>RESTful API Design</li>
-              <li>SQL & Database Modeling (SQLite, MySQL)</li>
+              <li>SQL & Database Modeling</li>
               <li>Authentication & Data Management</li>
             </ul>
           </div>
@@ -110,15 +101,14 @@
             <div class="service-icon">🎨</div>
             <h3>Frontend Development</h3>
             <p>
-              Building responsive, user-friendly interfaces with
+              Creating responsive, user-friendly interfaces with
               <strong>HTML</strong>, <strong>CSS</strong>, and
-              <strong>JavaScript</strong>. I apply modern web standards to
-              ensure accessibility and a seamless experience across devices.
+              <strong>JavaScript</strong>.
             </p>
             <ul class="service-list">
-              <li>Responsive Web Design</li>
+              <li>Responsive Design</li>
               <li>Interactive Components</li>
-              <li>Performance & Usability Optimization</li>
+              <li>Usability Optimization</li>
             </ul>
           </div>
 
@@ -126,15 +116,13 @@
             <div class="service-icon">🤖</div>
             <h3>Automation & Scripting</h3>
             <p>
-              Automating repetitive tasks with <strong>Python</strong> scripts —
-              from file management and data parsing to workflow optimization. I
-              leverage the standard library and focus on reliability and
-              maintainability.
+              Automating tasks with <strong>Python</strong> — from file
+              management to workflow optimization.
             </p>
             <ul class="service-list">
               <li>Task Automation</li>
-              <li>Data Extraction & CSV Processing</li>
-              <li>Debugging & Error Handling</li>
+              <li>Data Processing</li>
+              <li>Error Handling</li>
             </ul>
           </div>
         </div>
@@ -142,117 +130,80 @@
         <a href="#projects" class="cta-button">See My Work</a>
       </section>
 
-      <section id="projects" role="region" aria-label="Projects">
+      <!-- PROJECTS -->
+      <section id="projects">
         <h2>Projects</h2>
         <div class="projects-grid">
-          <div class="project-card" tabindex="0">
-            <img
-              src="RPGImg.png"
-              alt="Python RPG Project Preview"
-              class="project-image"
-            />
+          <div class="project-card">
+            <img src="RPGImg.png" alt="Python RPG Project" class="project-image" />
             <div class="project-overlay">
               <a
                 href="https://github.com/LuucassR/PythonRPGProject"
                 target="_blank"
-                rel="noopener noreferrer"
                 class="project-button"
                 >View Project</a
               >
             </div>
             <div class="project-info">
               <h4>Python RPG Project</h4>
-              <p>Console-based role-playing game with turn-based combat.</p>
+              <p>Console-based RPG with turn-based combat.</p>
               <div class="project-tags">
-                <span>Python</span>
-                <span>OOP</span>
+                <span>Python</span><span>OOP</span>
               </div>
               <div class="project-links">
                 <a
                   href="https://github.com/LuucassR/PythonRPGProject"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View code on GitHub"
                   >GitHub</a
                 >
               </div>
             </div>
           </div>
 
-          <div class="project-card" tabindex="0">
-            <img
-              src="wbPortfolioImg.png"
-              alt="Web Portfolio Preview"
-              class="project-image"
-            />
+          <div class="project-card">
+            <img src="wbPortfolioImg.png" alt="Web Portfolio" class="project-image" />
             <div class="project-overlay">
               <a
                 href="https://luucassr.github.io/"
                 target="_blank"
-                rel="noopener noreferrer"
                 class="project-button"
                 >View Project</a
               >
             </div>
             <div class="project-info">
               <h4>Personal Web Portfolio</h4>
-              <p>Responsive design with HTML, CSS, JS, and Flask.</p>
+              <p>Responsive design with HTML, CSS, and JS.</p>
               <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View code on GitHub"
-                  >GitHub</a
-                >
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
               </div>
             </div>
           </div>
 
-          <div class="project-card" tabindex="0">
-            <img
-              src="AutomateTaskImg.png"
-              alt="Task Automation Preview"
-              class="project-image"
-            />
+          <div class="project-card">
+            <img src="AutomateTaskImg.png" alt="Automation Project" class="project-image" />
             <div class="project-overlay">
               <a
                 href="https://github.com/LuucassR/Task-Automation"
                 target="_blank"
-                rel="noopener noreferrer"
                 class="project-button"
                 >View Project</a
               >
             </div>
             <div class="project-info">
               <h4>Task Automation</h4>
-              <p>Python scripts to generate reports and handle CSV data.</p>
+              <p>Python scripts for CSV data handling.</p>
               <div class="project-tags">
-                <span>Python</span>
-                <span>CSV Files</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/LuucassR/Task-Automation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View code on GitHub"
-                  >GitHub</a
-                >
+                <span>Python</span><span>CSV</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" role="region" aria-label="Contact">
+      <!-- CONTACT -->
+      <section id="contact">
         <h2>Contact</h2>
-        <p>Interested Send me a message.</p>
+        <p>Interested? Send me a message!</p>
 
         <form
           action="https://getform.io/f/awnyzyyb"
@@ -275,35 +226,17 @@
         </form>
 
         <div class="social-links">
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="My LinkedIn profile"
-            >LinkedIn</a
-          >
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="My GitHub profile"
-            >GitHub</a
-          >
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="https://github.com/LuucassR" target="_blank">GitHub</a>
         </div>
       </section>
 
-      <section id="footer" role="region" aria-label="Footer">
-        <footer class="main-footer">
-          <p>&copy; 2025 Lucas Rossi. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </footer>
-      </section>
+      <!-- FOOTER -->
+      <footer id="footer" class="main-footer">
+        <p>&copy; 2025 Lucas Rossi. All rights reserved.</p>
+      </footer>
     </main>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
