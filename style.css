@@ -39,15 +39,25 @@ body {
   overflow-x: hidden; /* Previene scroll horizontal */
 }
 
-/* Asumiendo que tu main es el elemento de scroll */
+html, body {
+  height: 100%;
+  overflow: hidden; /* evita que el body tenga scroll */
+}
+
 #main-content::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari */
 }
 
 #main-content {
-  -ms-overflow-style: none; /* IE and Edge */
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+
+  /* Ocultar scrollbar en todos los navegadores */
+  -ms-overflow-style: none; /* IE & Edge */
   scrollbar-width: none; /* Firefox */
 }
+
 
 /* 1.2: Contenedor principal para scroll-snap */
 #main-content {
@@ -297,43 +307,110 @@ p {
 
 /* --- 4. Sección Servicios / Habilidades --- */
 /* 4.3: Grilla responsiva */
+#services {
+  background-color: var(--color-bg);
+  text-align: center;
+}
+
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 .services-grid {
   display: grid;
   /* Crea columnas de mínimo 280px y máximo 1fr (ocupa el espacio disponible) */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
   width: 100%;
   max-width: 1100px;
+  margin: 0 auto;
 }
 .service-card {
   background-color: var(--color-card);
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
   border: 1px solid #374151;
-  text-align: center;
-  /* 4.2: Transición para efecto "levantamiento" */
-  transition: transform var(--transition-fast),
-    background-color var(--transition-fast), box-shadow var(--transition-fast);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+/* Decorative glow on hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+.service-card:hover::before {
+  opacity: 0.15;
+}
+
 /* 4.1: Iconos representativos */
 .service-icon {
   font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
+  z-index: 1;
+  position: relative;
 }
+
+/* Text */
 .service-card h3 {
   color: var(--color-text);
   margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
 }
+
 .service-card p {
   font-size: 1rem;
   color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  z-index: 1;
 }
 /* 4.2: Animación hover "levantamiento" */
 .service-card:hover {
   transform: translateY(-10px);
   background-color: #2a3a50; /* Color de fondo más claro */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* List */
+.service-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.service-list li {
+  color: var(--color-accent);
+  font-weight: 500;
+  margin: 0.4rem 0;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.service-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+/* CTA Button */
+#services .cta-button {
+  margin-top: 3rem;
 }
 
 /* --- 5. Sección Proyectos --- */
@@ -540,26 +617,12 @@ p {
 
 
 /* --- Nuevo: Footer Styling --- */
-.main-footer {
-  width: 100%;
-  padding: 2rem 1rem;
+#footer {
+  scroll-snap-align: start;
   background-color: var(--color-bg);
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
   border-top: 1px solid var(--color-card);
-}
-.footer-links {
-    margin-top: 0.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-.footer-links a {
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-.footer-links a:hover {
-    color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 1vh; /* altura más baja que otras secciones */
 }

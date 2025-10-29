@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize particles
   function initParticles() {
     particlesArray = [];
-    let numberOfParticles = (w * h) / 5000; // Optimized number
+    let numberOfParticles = (w * h) / 2000; // Optimized number
     for (let i = 0; i < numberOfParticles; i++) {
       particlesArray.push(new Particle());
     }
